@@ -1,22 +1,19 @@
 import 'package:flutter/material.dart';
+import 'screens/home_screen.dart';
+import 'package:toolflix/screens/api_service.dart';
 
 void main() {
-  runApp(App());
+  ApiService().getTodaysToons();
+  runApp(const App());
 }
 
 class App extends StatelessWidget {
+  const App({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('Hello Flutter!'),
-          backgroundColor: Colors.blue,
-        ),
-        body: Center(
-          child: Text('Hello World'),
-        ),
-      ),
+    return const MaterialApp(
+      home: HomeScreen(),
     );
   }
 }
